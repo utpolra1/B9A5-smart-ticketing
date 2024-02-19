@@ -40,6 +40,8 @@ document.querySelector("#btnNext").addEventListener("click", function(){
     header.classList.add("hidden");
     const mainsection = document.getElementById("mainSection");
     mainsection.classList.add("hidden");
+    const footerHidden=document.getElementById("footerHidden");
+    footerHidden.classList.add("hidden");
 
     const success=document.getElementById("success");
     success.classList.remove("hidden");
@@ -87,5 +89,17 @@ buttonApply.addEventListener("click", function(){
 })
 
 
+document.getElementById("couponCode").addEventListener("input", function() {
+    var couponCode = this.value.trim(); // Trim whitespace from input
+    var applyButton = document.getElementById("buttonApply");
+    if (couponCode !== "") {
+        // Enable button if input field is not empty
+        applyButton.disabled = false;
+    } else {
+        // Otherwise, disable button
+        applyButton.disabled = true;
+
+    }
+});
 
 
